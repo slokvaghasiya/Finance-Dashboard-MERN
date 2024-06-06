@@ -14,7 +14,6 @@ const Row1 = () => {
     const revenueExpenses = useMemo(() => {
         return (
             data && data[0].monthlyData.map(({ month, revenue, expenses }) => {
-                console.log("DATA........", data[0].monthlyData);
                 return {
 
                     name: month.substring(0, 3),
@@ -28,7 +27,6 @@ const Row1 = () => {
     const revenueProfit = useMemo(() => {
         return (
             data && data[0].monthlyData.map(({ month, revenue, expenses }) => {
-                console.log("DATA........", data[0].monthlyData);
                 return {
 
                     name: month.substring(0, 3),
@@ -42,7 +40,6 @@ const Row1 = () => {
     const revenue = useMemo(() => {
         return (
             data && data[0].monthlyData.map(({ month, revenue }) => {
-                console.log("DATA........", data[0].monthlyData);
                 return {
 
                     name: month.substring(0, 3),
@@ -89,7 +86,7 @@ const Row1 = () => {
             </DashboardBox>
 
             <DashboardBox gridArea="b" >
-                <BoxHeaders title='Revenue and Expenses' subtitle='top line reprsents revenue, bottom line represents profit' sidetext='+4%' />
+                <BoxHeaders title='Revenue and Expenses' subtitle='Revenue and profit' sidetext='+4%' />
                 <ResponsiveContainer width="100%" height={"80%"} >
                     <LineChart
                         data={revenueProfit}
