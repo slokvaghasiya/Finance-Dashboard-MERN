@@ -13,7 +13,6 @@ const pieData = [
 ]
 
 
-
 const Row2 = () => {
 
     const { palette } = useTheme();

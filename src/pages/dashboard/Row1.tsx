@@ -9,7 +9,6 @@ const Row1 = () => {
 
     const { data } = useGetKpisQuery();
     const { palette } = useTheme()
-    console.log("DATA,", data);
 
     const revenueExpenses = useMemo(() => {
         return (
@@ -109,7 +108,7 @@ const Row1 = () => {
                 </ResponsiveContainer>
             </DashboardBox>
 
-            <DashboardBox gridArea="c" >
+            <DashboardBox gridArea="c"  >
                 <BoxHeaders title='Revenue and Expenses' subtitle='graph representing the revenue month by month' sidetext='+4%' />
                 <ResponsiveContainer width="100%" height={"90%"}>
                     <BarChart
