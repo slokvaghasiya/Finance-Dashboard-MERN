@@ -28,7 +28,7 @@ export interface GetkpisResponse {
     totalProfit: number;
     totalRevenue: number;
     totalExpenses: number;
-    expensesCategort: ExpensesByCategory;
+    expensesByCategory: ExpensesByCategory;
     monthlyData: Array<Month>;
     dailyData: Array<day>;
     createdAt: string;
