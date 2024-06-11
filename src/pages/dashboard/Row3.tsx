@@ -35,7 +35,6 @@ const Row3 = () => {
             )
         }
     }, [kpisData])
-    console.log("data..", pieChartData);
     const productColumns = [
         {
             field: "_id",
@@ -172,7 +171,19 @@ const Row3 = () => {
 
                 </FlexBetween>
             </DashboardBox>
-            <DashboardBox gridArea="j" ></DashboardBox>
+
+            <DashboardBox gridArea="j" >
+            <BoxHeaders title='Overall Summary and Explanation Data' sidetext="+50%" />
+            <Box height="15px" margin={"1.5rem 1rem 0.4rem 1rem"} bgcolor={palette.primary[800]} borderRadius="1rem" >
+                <Box width="40%" borderRadius="1rem" height="15px"  bgcolor={palette.primary[600]} >
+
+                </Box>
+            </Box>
+            <Typography variant='h6' margin="0 1rem" >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo tempore, sit expedita aut ipsa inventore ab consectetur ea voluptates eum. Vel deserunt libero quas aut esse, hic sunt! Libero, sunt!
+            Exercitationem dolor error laudantium, debitis et molestiae nulla architecto aut ad amet dolorem magni totam cumque. Molestias facere recusandae excepturi fuga natus voluptas sunt dolores repudiandae, obcaecati, quas nihil inventore?
+            </Typography>
+            </DashboardBox>
         </>
     )
 }

@@ -51,7 +51,7 @@ const Row1 = () => {
 
     return (
         <>
-            <DashboardBox gridArea="a" style={{height:"95%"}} >
+            <DashboardBox gridArea="a" style={{ height: "95%" }} >
                 <BoxHeaders title='Revenue and Expenses' subtitle='top line reprsents revenue, bottom line represents expenses' sidetext='+4%' />
                 <ResponsiveContainer width="100%" height={"90%"} >
                     <AreaChart
@@ -84,10 +84,12 @@ const Row1 = () => {
                 </ResponsiveContainer>
             </DashboardBox>
 
-            <DashboardBox gridArea="b" style={{height:"90%"}} >
+            <DashboardBox gridArea="b" style={{ height: "90%" }} >
                 <BoxHeaders title='Revenue and Expenses' subtitle='Revenue and profit' sidetext='+4%' />
                 <ResponsiveContainer width="100%" height={"80%"} >
                     <LineChart
+                        width={500}
+                        height={400}
                         data={revenueProfit}
                         margin={{
                             top: 20,
@@ -108,7 +110,7 @@ const Row1 = () => {
                 </ResponsiveContainer>
             </DashboardBox>
 
-            <DashboardBox gridArea="c" style={{height:"95%"}} >
+            <DashboardBox gridArea="c" style={{ height: "95%" }} >
                 <BoxHeaders title='Revenue and Expenses' subtitle='graph representing the revenue month by month' sidetext='+4%' />
                 <ResponsiveContainer width="100%" height={"90%"}>
                     <BarChart
