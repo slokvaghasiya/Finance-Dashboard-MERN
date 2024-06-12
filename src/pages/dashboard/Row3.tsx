@@ -1,5 +1,5 @@
 import DashboardBox from '@/components/DashboardBox'
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { useGetTransactionsQuery, useGetProductsQuery, useGetKpisQuery } from '@/state/api'
 import { DataGrid, GridCellParams } from '@mui/x-data-grid';
 import BoxHeaders from '@/components/BoxHeaders';
@@ -9,11 +9,10 @@ import { useMemo } from 'react';
 
 const Row3 = () => {
 
-    const { palette } = useTheme();
     const { data: productData } = useGetProductsQuery();
     const { data: kpisData } = useGetKpisQuery();
     const { data: transactionsData } = useGetTransactionsQuery();
-    const pieColor = [palette.primary[800], palette.primary[300]]
+
 
 
     const pieChartData = useMemo(() => {
@@ -85,14 +84,14 @@ const Row3 = () => {
                 <BoxHeaders title='List of Products' sidetext={`${productData?.length} products`} />
                 <Box mt="0.5rem" p="0 0.5rem" height="75%" sx={{
                     "& .MuiDataGrid-root": {
-                        color: palette.grey[300],
+                        color: "#d1d3da",
                         border: "none"
                     },
                     "& .MuiDataGrid-cell": {
-                        borderBottom: `1px solid ${palette.grey[800]} !important`
+                        borderBottom: `1px solid #48494e !important`
                     },
                     "& .MuiDataGrid-columnHeaders": {
-                        borderBottom: `1px solid ${palette.grey[800]} !important`
+                        borderBottom: `1px solid #48494e !important`
                     },
                     "& .MuiDataGrid-columnSeperator": {
                         visibility: "hidden"
@@ -113,14 +112,14 @@ const Row3 = () => {
                 <BoxHeaders title='Recent Orders' sidetext={`${transactionsData?.length} latest transactions`} />
                 <Box mt="1rem" p="0 0.5rem" height="80%" sx={{
                     "& .MuiDataGrid-root": {
-                        color: palette.grey[300],
+                        color: "#d1d3da",
                         border: "none"
                     },
                     "& .MuiDataGrid-cell": {
-                        borderBottom: `1px solid ${palette.grey[800]} !important`
+                        borderBottom: `1px solid #48494e !important`
                     },
                     "& .MuiDataGrid-columnHeaders": {
-                        borderBottom: `1px solid ${palette.grey[800]} !important`
+                        borderBottom: `1px solid #48494e !important`
                     },
                     "& .MuiDataGrid-columnSeperator": {
                         visibility: "hidden"
@@ -157,8 +156,8 @@ const Row3 = () => {
                                         paddingAngle={2}
                                         dataKey="value"
                                     >
-                                        {data.map((entry, index) => (
-                                            <Cell key={`cell-${index}`} fill={pieColor[index]} />
+                                        {data.map((index: any) => (
+                                            <Cell key={`cell-${index}`} fill={"#71f5de"} />
                                         ))}
                                     </Pie>
                                 </PieChart>
@@ -168,21 +167,20 @@ const Row3 = () => {
                         )
                     }
 
-
                 </FlexBetween>
             </DashboardBox>
 
             <DashboardBox gridArea="j" >
-            <BoxHeaders title='Overall Summary and Explanation Data' sidetext="+50%" />
-            <Box height="15px" margin={"1.5rem 1rem 0.4rem 1rem"} bgcolor={palette.primary[800]} borderRadius="1rem" >
-                <Box width="40%" borderRadius="1rem" height="15px"  bgcolor={palette.primary[600]} >
+                <BoxHeaders title='Overall Summary and Explanation Data' sidetext="+50%" />
+                <Box height="15px" margin={"1.5rem 1rem 0.4rem 1rem"} bgcolor="#076050" borderRadius="1rem" >
+                    <Box width="40%" borderRadius="1rem" height="15px" bgcolor="#0ebfa0" >
 
+                    </Box>
                 </Box>
-            </Box>
-            <Typography variant='h6' margin="0 1rem" >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo tempore, sit expedita aut ipsa inventore ab consectetur ea voluptates eum. Vel deserunt libero quas aut esse, hic sunt! Libero, sunt!
-            Exercitationem dolor error laudantium, debitis et molestiae nulla architecto aut ad amet dolorem magni totam cumque. Molestias facere recusandae excepturi fuga natus voluptas sunt dolores repudiandae, obcaecati, quas nihil inventore?
-            </Typography>
+                <Typography variant='h6' margin="0 1rem" >
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo tempore, sit expedita aut ipsa inventore ab consectetur ea voluptates eum. Vel deserunt libero quas aut esse, hic sunt! Libero, sunt!
+                    Exercitationem dolor error laudantium, debitis et molestiae nulla architecto aut ad amet dolorem magni totam cumque. Molestias facere recusandae excepturi fuga natus voluptas sunt dolores repudiandae, obcaecati, quas nihil inventore?
+                </Typography>
             </DashboardBox>
         </>
     )

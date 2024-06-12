@@ -2,9 +2,9 @@ import BoxHeaders from '@/components/BoxHeaders'
 import DashboardBox from '@/components/DashboardBox'
 import FlexBetween from '@/components/FlexBetween'
 import { useGetKpisQuery, useGetProductsQuery } from '@/state/api'
-import { Box, Typography, useTheme } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
-import { CartesianGrid, Tooltip, Legend, Line, LineChart, ResponsiveContainer, XAxis, YAxis, PieChart, Pie, Cell, ScatterChart, Scatter, ZAxis } from 'recharts'
+import { CartesianGrid, Tooltip, Line, LineChart, ResponsiveContainer, XAxis, YAxis, PieChart, Pie, Cell, ScatterChart, Scatter, ZAxis } from 'recharts'
 
 
 const pieData = [
@@ -14,9 +14,6 @@ const pieData = [
 
 
 const Row2 = () => {
-
-    const { palette } = useTheme();
-    const pieColor = [palette.primary[800], palette.primary[300]]
     const { data: operationalData } = useGetKpisQuery();
     const { data: productData } = useGetProductsQuery();
 
@@ -61,13 +58,13 @@ const Row2 = () => {
                             bottom: 55,
                         }}
                     >
-                        <CartesianGrid vertical={false} stroke={palette.grey[800]} />
+                        <CartesianGrid vertical={false} stroke="#48494e" />
                         <XAxis dataKey="name" tickLine={false} style={{ fontSize: "10px" }} />
                         <YAxis yAxisId="left" tickLine={false} axisLine={false} style={{ fontSize: "10px" }} orientation='right' />
                         <YAxis yAxisId="right" tickLine={false} axisLine={false} style={{ fontSize: "10px" }} orientation='right' />
                         <Tooltip />
-                        <Line dataKey="Non Operational Expenses" yAxisId="left" type="monotone" stroke={palette.grey[500]} />
-                        <Line dataKey="Operational Expenses" yAxisId="right" type="monotone" stroke={palette.primary.main} />
+                        <Line dataKey="Non Operational Expenses" yAxisId="left" type="monotone" stroke="#b3b6c2" />
+                        <Line dataKey="Operational Expenses" yAxisId="right" type="monotone" stroke="#12efc8" />
                     </LineChart>
                 </ResponsiveContainer>
             </DashboardBox>
@@ -92,14 +89,14 @@ const Row2 = () => {
                             paddingAngle={2}
                             dataKey="value"
                         >
-                            {pieData.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={pieColor[index]} />
+                            {pieData.map((index: any) => (
+                                <Cell key={`cell-${index}`} fill={"#71f5de"} />
                             ))}
                         </Pie>
                     </PieChart>
                     <Box flexBasis="40%"  >
                         <Typography variant='h5'>Target Sales</Typography>
-                        <Typography m="0.3rem 0" variant='h3' color={palette.primary[300]} >83</Typography>
+                        <Typography m="0.3rem 0" variant='h3' color="#71f5de" >83</Typography>
                         <Typography variant='h6' >Final Goals of the campaging that is desired </Typography>
                     </Box>
                     <Box ml="-0.7rem" flexBasis="40%" textAlign="center" >
@@ -123,7 +120,7 @@ const Row2 = () => {
                             left: -10,
                         }}
                     >
-                        <CartesianGrid stroke={palette.grey[800]} />
+                        <CartesianGrid stroke="#48494e" />
                         <XAxis
                             type="number"
                             dataKey="price"
@@ -145,7 +142,7 @@ const Row2 = () => {
                             range={[20]}
                         />
                         <Tooltip formatter={(v) => `$${v}`} />
-                        <Scatter name="Product Expense Ratio" data={productExpenseData} fill={palette.tertiary[500]} />
+                        <Scatter name="Product Expense Ratio" data={productExpenseData} fill="#8884d8" />
                     </ScatterChart>
                 </ResponsiveContainer>
             </DashboardBox>

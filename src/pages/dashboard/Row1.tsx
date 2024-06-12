@@ -1,14 +1,12 @@
 import BoxHeaders from '@/components/BoxHeaders';
 import DashboardBox from '@/components/DashboardBox'
 import { useGetKpisQuery } from '@/state/api'
-import { useTheme } from '@mui/material';
 import { useMemo } from 'react';
-import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, Line, CartesianGrid, Legend, LineChart, BarChart, Bar, Rectangle } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, Line, CartesianGrid, Legend, LineChart, BarChart, Bar } from 'recharts';
 
 const Row1 = () => {
 
     const { data } = useGetKpisQuery();
-    const { palette } = useTheme()
 
     const revenueExpenses = useMemo(() => {
         return (
@@ -20,7 +18,7 @@ const Row1 = () => {
                     expenses: expenses
                 }
             })
-        )
+        ) 
     }, [data])
 
     const revenueProfit = useMemo(() => {
@@ -67,19 +65,19 @@ const Row1 = () => {
                     >
                         <defs>
                             <linearGradient id='colorRevenue' x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor={palette.primary[300]} stopOpacity={0.5} />
-                                <stop offset="95%" stopColor={palette.primary[300]} stopOpacity={0} />
+                                <stop offset="5%" stopColor="#71f5de" stopOpacity={0.5} />
+                                <stop offset="95%" stopColor="#71f5de" stopOpacity={0} />
                             </linearGradient>
                             <linearGradient id='colorExpenses' x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor={palette.primary[300]} stopOpacity={0.5} />
-                                <stop offset="95%" stopColor={palette.primary[300]} stopOpacity={0} />
+                                <stop offset="5%" stopColor="#71f5de" stopOpacity={0.5} />
+                                <stop offset="95%" stopColor="#71f5de" stopOpacity={0} />
                             </linearGradient>
                         </defs>
                         <XAxis dataKey="name" tickLine={false} style={{ fontSize: "10px" }} />
                         <YAxis tickLine={false} axisLine={{ strokeWidth: "10px" }} domain={[8000, 23000]} style={{ fontSize: "10px" }} />
                         <Tooltip />
-                        <Area type="monotone" dot={true} dataKey="revenue" stroke={palette.primary.main} fillOpacity={1} fill="url(#colorRevenue)" />
-                        <Area type="monotone" dot={true} dataKey="expenses" stroke={palette.primary.main} fillOpacity={1} fill="url(#colorExpenses)" />
+                        <Area type="monotone" dot={true} dataKey="revenue" stroke="#12efc8" fillOpacity={1} fill="url(#colorRevenue)" />
+                        <Area type="monotone" dot={true} dataKey="expenses" stroke="#12efc8" fillOpacity={1} fill="url(#colorExpenses)" />
                     </AreaChart>
                 </ResponsiveContainer>
             </DashboardBox>
@@ -98,14 +96,14 @@ const Row1 = () => {
                             bottom: 55,
                         }}
                     >
-                        <CartesianGrid vertical={false} stroke={palette.grey[800]} />
+                        <CartesianGrid vertical={false} stroke="#48494e" />
                         <XAxis dataKey="name" tickLine={false} style={{ fontSize: "10px" }} />
                         <YAxis yAxisId="left" tickLine={false} axisLine={false} style={{ fontSize: "10px" }} />
                         <YAxis yAxisId="right" tickLine={false} axisLine={false} style={{ fontSize: "10px" }} orientation='right' />
                         <Tooltip />
                         <Legend height={20} wrapperStyle={{ margin: "0 0 10px 0" }} />
-                        <Line dataKey="profit" yAxisId="left" type="monotone" stroke={palette.grey[500]} />
-                        <Line dataKey="revenue" yAxisId="right" type="monotone" stroke={palette.primary.main} />
+                        <Line dataKey="profit" yAxisId="left" type="monotone" stroke="#b3b6c2" />
+                        <Line dataKey="revenue" yAxisId="right" type="monotone" stroke="#8884d8" />
                     </LineChart>
                 </ResponsiveContainer>
             </DashboardBox>
@@ -126,11 +124,11 @@ const Row1 = () => {
                     >
                         <defs>
                             <linearGradient id='colorRevenue' x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor={palette.primary[300]} stopOpacity={0.8} />
-                                <stop offset="95%" stopColor={palette.primary[300]} stopOpacity={0} />
+                                <stop offset="5%" stopColor="#71f5de" stopOpacity={0.8} />
+                                <stop offset="95%" stopColor="#71f5de" stopOpacity={0} />
                             </linearGradient>
                         </defs>
-                        <CartesianGrid vertical={false} stroke={palette.grey[800]} />
+                        <CartesianGrid vertical={false} stroke="#48494e" />
                         <XAxis dataKey="name" axisLine={false} tickLine={false} style={{ fontSize: "10px" }} />
                         <YAxis axisLine={false} tickLine={false} style={{ fontSize: "10px" }} />
                         <Tooltip />
