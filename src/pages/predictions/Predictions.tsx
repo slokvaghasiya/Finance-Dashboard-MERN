@@ -1,7 +1,7 @@
 import DashboardBox from '@/components/DashboardBox'
 import FlexBetween from '@/components/FlexBetween'
 import { useGetKpisQuery } from '@/state/api'
-import { Box, Button, Typography, useTheme } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import { useMemo, useState } from 'react'
 import { CartesianGrid, Tooltip, Legend, Line, LineChart, ResponsiveContainer, XAxis, YAxis, Label } from 'recharts'
 import regression, { DataPoint } from "regression";
@@ -9,7 +9,6 @@ import regression, { DataPoint } from "regression";
 
 const Predictions = () => {
 
-    const { palette } = useTheme()
     const [isPrediction, setIsPrediction] = useState(false)
     const { data: kpisData } = useGetKpisQuery();
 
@@ -40,8 +39,8 @@ const Predictions = () => {
                     <Typography variant='h6' >Charted Revenue and predicted revenue based on a simple linear regression model</Typography>
                 </Box>
                 <Button onClick={() => setIsPrediction(true)} sx={{
-                    color: palette.grey[900],
-                    bgcolor: palette.grey[700],
+                    color: "#242427",
+                    bgcolor: "#6b6d74",
                     boxShadow: "0.1rem 0.1rem 0.1rem 0.1rem rgba(0,0,0,.4)"
                 }} >
                     Show Predicted Revenue for Next Year
@@ -57,7 +56,7 @@ const Predictions = () => {
                         bottom: 80,
                     }}
                 >
-                    <CartesianGrid strokeDasharray="3 3" stroke={palette.grey[800]} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#48494e" />
 
                     <XAxis dataKey="name" tickLine={false} style={{ fontSize: "10px" }} >
                         <Label value="Month" offset={-5} position="insideBottom" />
@@ -70,11 +69,11 @@ const Predictions = () => {
                     <Tooltip />
 
                     <Legend verticalAlign='top' />
-                    <Line dataKey="Actual Revenue" type="monotone" stroke={palette.primary.main} strokeWidth='0' dot={{ strokeWidth: 5 }} />
+                    <Line dataKey="Actual Revenue" type="monotone" stroke="#12efc8" strokeWidth='0' dot={{ strokeWidth: 5 }} />
                     <Line dataKey="Regression Line" type="monotone" stroke="#8884d8" dot={false} />
                     {
                         isPrediction && (
-                            <Line dataKey="Predicted Revenue" strokeDasharray="5 5" stroke={palette.secondary[500]} />
+                            <Line dataKey="Predicted Revenue" strokeDasharray="5 5" stroke="#f2b455" />
                         )
                     }
                 </LineChart>
