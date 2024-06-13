@@ -19,7 +19,7 @@ const Navbar = () => {
             </FlexBetween>
             <FlexBetween gap="2rem" >
                 <Box sx={{ "&:hover": { color: "#d0fcf4" } }} >
-                    <Link to={"/Finance-Dashboard-MERN"} onClick={() => setSelected("dashboard")}
+                    <Link to={"/"} onClick={() => setSelected("dashboard")}
                         style={{
                             color: selected === "dashboard" ? "inherit" : "#6b6d74",
                             textDecoration: "inherit"
@@ -28,7 +28,7 @@ const Navbar = () => {
                     </Link>
                 </Box>
                 <Box sx={{ "&:hover": { color: "#d0fcf4" } }} >
-                    <Link to={"/Finance-Dashboard-MERN/predictions"} onClick={() => setSelected("predictions")}
+                    <Link to={"/predictions"} onClick={() => setSelected("predictions")}
                         style={{
                             color: selected === "predictions" ? "inherit" : "#6b6d74",
                             textDecoration: "inherit"
