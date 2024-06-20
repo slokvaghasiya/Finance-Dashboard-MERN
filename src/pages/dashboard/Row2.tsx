@@ -46,7 +46,7 @@ const Row2 = () => {
 
     return (
         <>
-            <DashboardBox gridArea="d" >
+            <DashboardBox gridArea="d" height="90%" >
                 <BoxHeaders title='Operational vs Non-Operational Expenses' sidetext='+4%' />
                 <ResponsiveContainer height={"85%"}>
                     <LineChart
@@ -69,7 +69,7 @@ const Row2 = () => {
                 </ResponsiveContainer>
             </DashboardBox>
 
-            <DashboardBox gridArea="e" >
+            <DashboardBox gridArea="e" height="100%" >
                 <BoxHeaders title='Campagies and Targets' sidetext='+4%' />
                 <FlexBetween mt="0.25rem" gap="1.5rem" pr="1rem" >
                     <PieChart
@@ -109,7 +109,7 @@ const Row2 = () => {
                 </FlexBetween>
             </DashboardBox>
 
-            <DashboardBox gridArea="f" >
+            <DashboardBox gridArea="f" height="100%" >
                 <BoxHeaders title='Product Price vs Expenses' sidetext='+4%' />
                 <ResponsiveContainer width="100%" height="75%">
                     <ScatterChart

@@ -17,7 +17,7 @@ const BoxHeaders = ({ title, subtitle, sidetext, icon }: Props) => {
                 <FlexBetween>
                     {icon}
                     <Box width="100%" >
-                        <Typography variant='h4' mb="-0.1rem" >{title}</Typography>
+                        <Typography variant='h5' mb="-0.1rem" >{title}</Typography>
                         <Typography variant='h6'>{subtitle}</Typography>
                     </Box>
                 </FlexBetween>

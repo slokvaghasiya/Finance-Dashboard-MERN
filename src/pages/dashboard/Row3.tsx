@@ -6,6 +6,7 @@ import BoxHeaders from '@/components/BoxHeaders';
 import FlexBetween from '@/components/FlexBetween';
 import { Cell, Pie, PieChart } from 'recharts';
 import { useMemo } from 'react';
+import { grey } from '@mui/material/colors';
 
 const Row3 = () => {
 
@@ -80,7 +81,7 @@ const Row3 = () => {
 
     return (
         <>
-            <DashboardBox gridArea="g" style={{ height: "290px" }} >
+            <DashboardBox gridArea="g" style={{ height: "490px" }} >
                 <BoxHeaders title='List of Products' sidetext={`${productData?.length} products`} />
                 <Box mt="0.5rem" p="0 0.5rem" height="75%" sx={{
                     "& .MuiDataGrid-root": {
@@ -91,11 +92,15 @@ const Row3 = () => {
                         borderBottom: `1px solid #48494e !important`
                     },
                     "& .MuiDataGrid-columnHeaders": {
-                        borderBottom: `1px solid #48494e !important`
+                        borderBottom: `1px solid #48494e !important`,
+                        color: "black"
                     },
                     "& .MuiDataGrid-columnSeperator": {
                         visibility: "hidden"
                     },
+                    "& .MuiDataGrid-sortIcon": {
+                        color: "black"
+                    }
                 }} >
                     <DataGrid
                         getRowId={(row) => row._id}
@@ -108,9 +113,9 @@ const Row3 = () => {
                 </Box>
             </DashboardBox>
 
-            <DashboardBox gridArea="h" style={{ height: "290px" }} >
+            <DashboardBox gridArea="h" style={{ height: "490px" }} >
                 <BoxHeaders title='Recent Orders' sidetext={`${transactionsData?.length} latest transactions`} />
-                <Box mt="1rem" p="0 0.5rem" height="80%" sx={{
+                <Box mt="1rem" p="0 0.5rem" height="70%" sx={{
                     "& .MuiDataGrid-root": {
                         color: "#d1d3da",
                         border: "none"
@@ -119,11 +124,15 @@ const Row3 = () => {
                         borderBottom: `1px solid #48494e !important`
                     },
                     "& .MuiDataGrid-columnHeaders": {
-                        borderBottom: `1px solid #48494e !important`
+                        borderBottom: `1px solid #48494e !important`,
+                        color: "black"
                     },
                     "& .MuiDataGrid-columnSeperator": {
                         visibility: "hidden"
                     },
+                    "& .MuiDataGrid-sortIcon": {
+                        color: "black"
+                    }
                 }} >
                     <DataGrid
                         getRowId={(row) => row._id}
@@ -170,16 +179,14 @@ const Row3 = () => {
                 </FlexBetween>
             </DashboardBox>
 
-            <DashboardBox gridArea="j" >
+            <DashboardBox gridArea="j" height="80%" >
                 <BoxHeaders title='Overall Summary and Explanation Data' sidetext="+50%" />
                 <Box height="15px" margin={"1.5rem 1rem 0.4rem 1rem"} bgcolor="#076050" borderRadius="1rem" >
                     <Box width="40%" borderRadius="1rem" height="15px" bgcolor="#0ebfa0" >
-
                     </Box>
                 </Box>
                 <Typography variant='h6' margin="0 1rem" >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo tempore, sit expedita aut ipsa inventore ab consectetur ea voluptates eum. Vel deserunt libero quas aut esse, hic sunt! Libero, sunt!
-                    Exercitationem dolor error laudantium, debitis et molestiae nulla architecto aut ad amet dolorem magni totam cumque. Molestias facere recusandae excepturi fuga natus voluptas sunt dolores repudiandae, obcaecati, quas nihil inventore?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo tempore, sit expedita aut ipsa inventore ab consectetur.
                 </Typography>
             </DashboardBox>
         </>
